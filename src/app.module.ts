@@ -11,12 +11,12 @@ const environment = process.env.NODE_ENV || 'development';
     controllers: [],
     providers: [],
     imports: [
-      MongooseModule.forRoot(process.env.MONGODB_WRITE_CONNECTION_STRING),
-      ConfigModule.forRoot({
-         envFilePath: `.env.${environment}`,
-         isGlobal: true,
-      }),
-      UsersModule,
+        ConfigModule.forRoot({
+            envFilePath: `.env.${environment}`,
+            isGlobal: true,
+        }),
+        MongooseModule.forRoot(process.env.MONGODB_WRITE_CONNECTION_STRING),
+        UsersModule,
     ],
 })
 
