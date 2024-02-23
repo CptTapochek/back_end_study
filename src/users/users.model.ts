@@ -5,7 +5,8 @@ import {ApiProperty} from "@nestjs/swagger";
 
 interface UserCreationAttribute {
     email: string,
-    password: string
+    password: string,
+    role: string
 }
 
 @Schema()
@@ -17,6 +18,10 @@ export class User extends Document<User, UserCreationAttribute> {
     @ApiProperty({example: "**********", description: "Password"})
     @Prop({ isRequired: true, unique: false })
     password: string;
+
+    @ApiProperty({example: "SUPPORT", description: "User role"})
+    @Prop({ default: false })
+    role: string;
 
     @ApiProperty({example: "false", description: "User is banned or no"})
     @Prop({ default: false })
