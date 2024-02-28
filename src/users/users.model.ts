@@ -20,7 +20,7 @@ export class User extends Document<User, UserCreationAttribute> {
     password: string;
 
     @ApiProperty({example: "SUPPORT", description: "User role"})
-    @Prop({ default: false })
+    @Prop({ default: "SUPPORT" })
     role: string;
 
     @ApiProperty({example: "false", description: "User is banned or no"})
